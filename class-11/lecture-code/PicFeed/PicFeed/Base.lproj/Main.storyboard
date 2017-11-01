@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6cb-Rt-ixz">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="PicFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="plG-fr-oDp">
+                                <rect key="frame" x="51.666666666666657" y="40" width="310.66666666666663" height="368"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Wwp-gU-8k2" appends="YES" id="ShY-wt-h0j"/>
+                                    <outletCollection property="gestureRecognizers" destination="UmY-A3-LFX" appends="YES" id="n3B-Ub-trK"/>
+                                </connections>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZ8-Cz-QZt">
+                                <rect key="frame" x="707" y="428" width="155.33333333333337" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title=" POST ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="postButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6DH-OB-7tU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMK-f5-gi6">
+                                <rect key="frame" x="-448.33333333333326" y="428" width="155.33333333333331" height="48"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="FILTER">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="filterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KQW-co-hqb"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QNo-cJ-xKc">
+                                <rect key="frame" x="0.0" y="508" width="414" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="733-YA-dEi"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="krp-pN-0Ag">
+                                    <size key="itemSize" width="102" height="103"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="filterCell" id="utc-eS-loX" customClass="PostCell" customModule="PicFeed" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-1.6666666666666667" width="102" height="103"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="102" height="103"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vGA-LZ-mJy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="102" height="103"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vGA-LZ-mJy" secondAttribute="trailing" id="HCZ-Wu-pzZ"/>
+                                            <constraint firstAttribute="bottom" secondItem="vGA-LZ-mJy" secondAttribute="bottom" id="Xxl-ey-rDx"/>
+                                            <constraint firstItem="vGA-LZ-mJy" firstAttribute="leading" secondItem="utc-eS-loX" secondAttribute="leading" id="abH-Hl-h5J"/>
+                                            <constraint firstItem="vGA-LZ-mJy" firstAttribute="top" secondItem="utc-eS-loX" secondAttribute="top" id="v6d-ty-hsu"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="postImageView" destination="vGA-LZ-mJy" id="ZCR-Qr-kPn"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="plG-fr-oDp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.75" id="1I4-Dw-Ocj"/>
+                            <constraint firstItem="plG-fr-oDp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="5eg-HL-OJa"/>
+                            <constraint firstItem="wZ8-Cz-QZt" firstAttribute="top" secondItem="plG-fr-oDp" secondAttribute="bottom" constant="20" id="Ro3-r8-ygy"/>
+                            <constraint firstItem="plG-fr-oDp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SNF-dm-cIu"/>
+                            <constraint firstItem="wZ8-Cz-QZt" firstAttribute="top" secondItem="HMK-f5-gi6" secondAttribute="top" id="Sld-UW-Mbj"/>
+                            <constraint firstItem="HMK-f5-gi6" firstAttribute="leading" secondItem="plG-fr-oDp" secondAttribute="leading" constant="-500" id="WfI-gQ-3wM"/>
+                            <constraint firstItem="plG-fr-oDp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="b5l-Mc-mlF"/>
+                            <constraint firstAttribute="trailing" secondItem="QNo-cJ-xKc" secondAttribute="trailing" id="cCn-wf-uXb"/>
+                            <constraint firstItem="QNo-cJ-xKc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dsk-5g-z9o"/>
+                            <constraint firstItem="QNo-cJ-xKc" firstAttribute="top" secondItem="plG-fr-oDp" secondAttribute="bottom" constant="100" id="ei7-5m-wfY"/>
+                            <constraint firstItem="wZ8-Cz-QZt" firstAttribute="width" secondItem="plG-fr-oDp" secondAttribute="width" multiplier="0.5" id="mTu-hK-TVW"/>
+                            <constraint firstItem="wZ8-Cz-QZt" firstAttribute="trailing" secondItem="plG-fr-oDp" secondAttribute="trailing" constant="500" id="rTM-ks-7bb"/>
+                            <constraint firstItem="HMK-f5-gi6" firstAttribute="width" secondItem="wZ8-Cz-QZt" secondAttribute="width" id="tX6-vQ-V46"/>
+                            <constraint firstItem="HMK-f5-gi6" firstAttribute="height" secondItem="wZ8-Cz-QZt" secondAttribute="height" id="tXa-mY-Mlm"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="g6b-QN-O6L"/>
+                    <connections>
+                        <outlet property="collectionView" destination="QNo-cJ-xKc" id="Zm7-Sj-Bms"/>
+                        <outlet property="leadingConstraintForFilterButton" destination="WfI-gQ-3wM" id="f1y-fr-11E"/>
+                        <outlet property="selectedImageView" destination="plG-fr-oDp" id="Bag-We-J2C"/>
+                        <outlet property="trailingConstraintForPostButton" destination="rTM-ks-7bb" id="0vF-Rn-mb9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Wwp-gU-8k2">
+                    <connections>
+                        <action selector="userTappedImage:" destination="BYZ-38-t0r" id="Trw-wM-Jxb"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="UmY-A3-LFX">
+                    <connections>
+                        <action selector="userLongPressed:" destination="BYZ-38-t0r" id="KNm-lQ-hMa"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="931.88405797101461" y="35.054347826086961"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="QHw-3g-4UJ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="6cb-Rt-ixz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="tb6-uE-saI">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="88y-4w-XYg"/>
+                        <segue destination="j6B-Ly-Cdd" kind="relationship" relationship="viewControllers" id="KP5-4u-ZCd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ufm-gW-rNv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-475" y="443"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="lVm-ss-jay">
+            <objects>
+                <viewController id="j6B-Ly-Cdd" customClass="GalleryViewController" customModule="PicFeed" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5if-vf-LGg"/>
+                        <viewControllerLayoutGuide type="bottom" id="LQj-bI-VEA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g3V-KA-3DM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2n1-cW-0WM">
+                                <rect key="frame" x="0.0" y="20" width="414" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Hxt-dW-ISE">
+                                    <size key="itemSize" width="164" height="214"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="postCell" id="SFh-NV-lVj" customClass="PostCell" customModule="PicFeed" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="164" height="214"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="164" height="214"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pbu-DM-k1v">
+                                                    <rect key="frame" x="0.0" y="0.0" width="164" height="214"/>
+                                                    <gestureRecognizers/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstItem="Pbu-DM-k1v" firstAttribute="top" secondItem="SFh-NV-lVj" secondAttribute="top" id="DUG-XP-6tU"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pbu-DM-k1v" secondAttribute="trailing" id="QuU-DP-ddS"/>
+                                            <constraint firstAttribute="bottom" secondItem="Pbu-DM-k1v" secondAttribute="bottom" id="ZZD-NO-qwj"/>
+                                            <constraint firstItem="Pbu-DM-k1v" firstAttribute="leading" secondItem="SFh-NV-lVj" secondAttribute="leading" id="fcX-sy-nxd"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="postImageView" destination="Pbu-DM-k1v" id="8Py-AJ-ixY"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="3Mf-RE-oDu" appends="YES" id="1d9-wf-qxn"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LQj-bI-VEA" firstAttribute="top" secondItem="2n1-cW-0WM" secondAttribute="bottom" id="W8z-BK-CII"/>
+                            <constraint firstItem="2n1-cW-0WM" firstAttribute="top" secondItem="5if-vf-LGg" secondAttribute="bottom" id="YSI-mB-Fnz"/>
+                            <constraint firstItem="2n1-cW-0WM" firstAttribute="leading" secondItem="g3V-KA-3DM" secondAttribute="leading" id="fEG-AG-3Kd"/>
+                            <constraint firstAttribute="trailing" secondItem="2n1-cW-0WM" secondAttribute="trailing" id="o2j-z7-Atp"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="7tn-6m-3jB"/>
+                    <connections>
+                        <outlet property="collectionView" destination="2n1-cW-0WM" id="66b-BO-YYe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FuU-y4-G96" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="3Mf-RE-oDu">
+                    <connections>
+                        <action selector="userPinchedCollectionView:" destination="j6B-Ly-Cdd" id="Hou-Dl-VWq"/>
+                    </connections>
+                </pinchGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="924.63768115942037" y="730.43478260869574"/>
+        </scene>
+    </scenes>
+</document>
